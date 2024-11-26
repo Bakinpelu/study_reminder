@@ -1,0 +1,36 @@
+# Beatrice Akinpelu
+# 11/24/2024
+
+# This program provides personalized study reminders with motivational quotes.
+
+import time
+import random
+
+def get_motivational_quote():
+    """Returns a random motivational quote."""
+    quotes = [
+        "Believe in yourself and all that you are.",
+        "Success is the sum of small efforts repeated day in and day out.",
+        "Don’t watch the clock; do what it does. Keep going.",
+        "The best way to predict the future is to create it.",
+        "Hard work beats talent when talent doesn’t work hard.",
+    ]
+    return random.choice(quotes)
+
+def start_study_reminder():
+    """Starts the study reminder loop."""
+    print("Welcome to your personalized study reminder program, Beatrice!")
+    print("You’ll receive study reminders every 30 seconds with motivational quotes.")
+    print("Press Ctrl+C to stop the program anytime.\n")
+
+    try:
+        while True:
+            print("🔔 Time to focus on your studies! 🔔")
+            print(f"💡 Motivational Quote: {get_motivational_quote()}")
+            print("🌟 Keep pushing towards your goals! 🌟\n")
+            time.sleep(30)  # Wait for 30 seconds before the next reminder
+    except KeyboardInterrupt:
+        print("\nGood job for taking the time to study! See you next time. 👋")
+
+if __name__ == "__main__":
+    start_study_reminder()
